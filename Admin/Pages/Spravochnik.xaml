@@ -1,0 +1,51 @@
+﻿<Page x:Class="Admin.Pages.Spravochnik"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Admin.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Spravochnik">
+
+    <Grid Background="#FF3A886B">
+        <Label  Content="ТЕЛЕФОННЫЙ СПРАВОЧНИК СОТРУДНИКОВ" Margin="206,10,220,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sitka Subheading" FontSize="16" FontWeight="Bold" Height="37" RenderTransformOrigin="0.565,0.626" Foreground="#FF5DEBEB"/>
+
+        <DataGrid Name="DgrSprav" AutoGenerateColumns="False" Margin="10,158,10,10" Background="#FF7B7B7B" ColumnHeaderHeight="30" FontFamily="Sitka Subheading" BorderBrush="{x:Null}" SelectionChanged="DgrSprav_SelectionChanged" IsVisibleChanged="DgrSprav_IsVisibleChanged">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО"  
+                                Binding="{Binding FIO}" 
+                                Width="160"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность"  
+                                Binding="{Binding IdPost}" 
+                                Width="160"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон" 
+                                Binding="{Binding Phone}" 
+                                Width="104*"></DataGridTextColumn>
+
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content=">"  
+                                  Name="BtnEdit" 
+                            ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+
+
+        <Button Name ="button1" Content="ДОБАВИТЬ" Margin="10,82,0,0" Click="button1_Click" FontFamily="Yu Gothic UI" FontWeight="Bold"  RenderTransformOrigin="1.051,0.532" Height="59" VerticalAlignment="Top" HorizontalAlignment="Left" Width="219" Background="#FF6253F6" FontSize="20"/>
+        <Button Name ="button2" Content="УДАЛИТЬ" Margin="300,82,0,0" Click="Button2_Click" FontFamily="Yu Gothic UI" FontWeight="Bold"  RenderTransformOrigin="1.051,0.532" Height="59" VerticalAlignment="Top" HorizontalAlignment="Left" Width="219" Background="#FF6253F6" FontSize="20"/>
+        <Button Name ="button3" Content="НАЗАД" Margin="571,82,0,0" Click="button3_Click" FontFamily="Yu Gothic UI" FontWeight="Bold"  RenderTransformOrigin="1.022,0.602" Height="59" VerticalAlignment="Top" HorizontalAlignment="Left" Width="219" Background="#FF6253F6" FontSize="20"/>
+
+
+
+    </Grid>
+</Page>
